@@ -1,5 +1,6 @@
- // Bourbon & Neat
+ // Bourbon & Neat & Bitters
 @import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
@@ -9,18 +10,70 @@ body {
   color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+//===================================================================
+//Tab - Accordion Styling
+//===================================================================
+.accordion-tabs-minimal {
+  $tab-border-color: $base-border-color;
+  $tab-border: 1px solid $tab-border-color;
+  $tab-content-background: $base-background-color;
+  $tab-active-background: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: darken($light-gray, 5);
+  $tab-mode: $medium-screen;
+
+  @include clearfix;
+  margin-bottom: $base-spacing;
+
+  li.tab-header-and-content {
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  a.tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $dark-gray;
+    display: block;
+    font-weight: 400;
+    padding: $base-spacing/2 $gutter;
+
+    @include media($tab-mode) {
+      @include inline-block;
+      border-top: 0;
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: $base-spacing $gutter;
+
+    @include media($tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
   }
 }
+
+//===========================================================================
+//End of Tab-Accordion Styling
+//============================================================================
