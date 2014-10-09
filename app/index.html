@@ -40,16 +40,26 @@
     </section>
 
       <div class="directory">
+        <div class="profileBtn"><span class="#"></span>Edit Profile</div>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">
             <a href="#" class="tab-link is-active">Contributions</a>
             <div class="tab-content">
-              no content
+              <p>no content</p>
             </div>
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Repositories</a>
             <div class="tab-content">
+              <input type="Search" name="Repo_Search" value="Find a repository...">
+              <input type="button" name="Search_Button" value="Search">
+              <a href="#">All</a>
+              <a href="#">Public</a>
+              <a href="#">Private</a>
+              <a href="#">Sources</a>
+              <a href="#">Forks</a>
+              <a href="#">Mirrors</a>
+              <div class="button"><span class="#"></span>New</div>
               <ul>
                 <!--Template items go inside here! -->
               </ul>
@@ -59,7 +69,7 @@
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Public Activity</a>
             <div class="tab-content">
-                no content
+                <p>no content</p>
             </div>
           </li>
       </ul>
@@ -90,13 +100,28 @@
       </nav>
     </footer>
 
+    <!--- Templates ---->
+    <script id="repo_template" type="text/template">
+      <li><h3 class="repoTitle"><%= title %></h3>
+        <span class="stargazers"><%= stargazers</span>
+        <span class="forks"><%= forks %></span>
+        <span class="repoDescr"><%= description %></span>
+        <span class="repoUpdate"><%= update %></span>
+      </li>
+    </script>
+
+    <script id="user_template" type="text/template">
+      <img src="<%= userImage %>">
+      <h2
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+        <script src="scripts/token.js"></script>
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
