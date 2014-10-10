@@ -4,40 +4,43 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+
+//variables for styling
+$font:Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fffff;
+  font-family: $font;
   color: #333;
 }
 
 header {
-  height:50px;
-  font-size:12px;
+  height: 50px;
+  font-size: 12px;
+  background-color: #F5F5F5;
 }
 
 
 .outer-container-1 {
   @include outer-container;
-  overflow:auto;
-
-  ul {
-    @include span-columns(8);
-    float:left;
-
-    & > * {
-      float:left;
-    }
-  }
-
-  ul#userNav {
-    @include span-columns(4);
-    float:right;
-
-    & > * {
-      float:left;
-    }
-  }
+  padding: 10px 0 10px 0;
 }
+
+  .gitNav {
+    @include span-columns(8);
+    float: left;
+    li {
+      float: left;
+    }
+  }
+
+  #userNav {
+    @include span-columns(4);
+    float: right;
+    li {
+      float:left;
+    }
+  }
+
 
 #userNav img{
   height:20px;
@@ -46,22 +49,30 @@ header {
 
 .outer-container-2 {
   @include outer-container;
-  overflow:auto;
-
+  overflow: auto;
+  margin-top: 35px;
   .sidebar {
     @include span-columns(3);
+    padding: 0 10px 0 10px;
+
   }
 
   .sidebar > * {
-    float:left;
+    float: left;
+  }
+
+  .sidebar img {
+    width: 50px;
+    height: 50px;
   }
 
   .directory {
     @include span-columns(9);
+    @include omega();
   }
 
   .directory > * {
-    float:left;
+
   }
 }
 
@@ -78,6 +89,59 @@ footer {
   li {
     float:left;
   }
+}
+
+.tab-content {
+  input:first-child {
+    float:left;
+    width: 260px;
+  }
+}
+
+/*=================================================================
+Repo List Styling
+==================================================================*/
+
+.repoList li {
+  height: 140px;
+  border-top: 1px solid lightgray;
+  padding: 35px 0 35px 0;
+}
+
+.repoHeader {
+  float:left;
+  width:100%;
+}
+
+.repoTitle {
+  float:left;
+  font-size: 20px;
+  font-style: bold;
+}
+
+.repoHistory {
+  float: right;
+  font-size: 10px;
+  font-style: bold;
+  color: gray;
+}
+
+.repoText {
+  float: left;
+  font-size: 12px;
+
+  .repoDescr {
+    display: block;
+
+  }
+}
+
+/*=================================================================
+End of Repo List Styling
+==================================================================*/
+
+footer {
+  @include outer-container;
 }
 //===================================================================
 //Tab - Accordion Styling

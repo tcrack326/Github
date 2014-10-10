@@ -25,7 +25,7 @@
   <body>
     <header>
       <div class="outer-container-1">
-        <ul>
+        <ul class="gitNav">
           <li><a href="#"></a><span class="octicon octicon-mark-github"></span></li>
           <li><input type="search" name="Search Github" value="Search Github"></li>
           <li><a href="#">Explore</a></li>
@@ -80,7 +80,7 @@
                   <p>no content</p>
               </div>
             </li>
-        </ul>
+        </ul><!-- tabs end    -->
       </div><!--directory end -->
 </div><!--outer-container end -->
 
@@ -111,11 +111,19 @@
 <!-- =====================Templates========================================== -->
 
     <script id="repo_template" type="text/template">
-      <li><a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
-        <a href="<%= stargazers_url %>"><span class="octicon octicon-star"></span><span><%= stargazers_count %></span></a>
-        <a href=""><span class="octicon octicon-git-branch"></span><span><%= forks %></span></a>
-        <span class="repoDescr"><%= description %></span>
-        <span class="repoUpdate"><%= updated_at %></span>
+      <li>
+      <div class="repoHeader">
+        <a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
+          <div class="repoHistory">
+            <span><%= language %></span>
+            <a href="<%= stargazers_url %>"><span class="octicon octicon-star"></span><span><%= stargazers_count %></span></a>
+            <a href=""><span class="octicon octicon-git-branch"></span><span><%= forks %></span></a>
+          </div>
+        </div>
+        <div class="repoText">
+          <span class="repoDescr"><%= description %></span>
+          <span class="repoUpdate"><%= updated_at %></span>
+        </div>
       </li>
     </script>
 
