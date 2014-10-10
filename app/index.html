@@ -33,6 +33,7 @@
         <li><a href="#">Help</a></li>
       </ul>
       <ul id="userNav">
+        <!-- Template goes here -->
       </ul>
     </header>
     <section class="sidebar">
@@ -40,16 +41,16 @@
     </section>
 
       <div class="directory">
-        <div class="profileBtn"><span class="#"></span>Edit Profile</div>
+        <div class="profileBtn"><span class="octicon octicon-pencil"></span>Edit Profile</div>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">
-            <a href="#" class="tab-link is-active">Contributions</a>
+            <a href="#" class="tab-link is-active"><span class="octicon octicon-diff-added"></span>Contributions</a>
             <div class="tab-content">
               <p>no content</p>
             </div>
           </li>
           <li class="tab-header-and-content">
-            <a href="#" class="tab-link">Repositories</a>
+            <a href="#" class="tab-link"><span class="octicon octicon-repo-pull"></span>Repositories</a>
             <div class="tab-content">
               <input type="Search" name="Repo_Search" value="Find a repository...">
               <input type="button" name="Search_Button" value="Search">
@@ -59,7 +60,7 @@
               <a href="#">Sources</a>
               <a href="#">Forks</a>
               <a href="#">Mirrors</a>
-              <div class="button"><span class="#"></span>New</div>
+              <div class="button"><span class="octicon octicon-repo-pull"></span>New</div>
               <ul>
                 <!--Template items go inside here! -->
               </ul>
@@ -67,7 +68,7 @@
             </div>
           </li>
           <li class="tab-header-and-content">
-            <a href="#" class="tab-link">Public Activity</a>
+            <a href="#" class="tab-link"><span class="octicon octicon-rss"></span>Public Activity</a>
             <div class="tab-content">
                 <p>no content</p>
             </div>
@@ -102,18 +103,38 @@
 
     <!--- Templates ---->
     <script id="repo_template" type="text/template">
-      <li><h3 class="repoTitle"><%= title %></h3>
-        <span class="stargazers"><%= stargazers</span>
-        <span class="forks"><%= forks %></span>
+      <li><a href="<%= repoLink %>"<h3 class="repoTitle"><%= title %></h3></a>
+        <a href=""><span class="octicon octicon-star"></span><span><%= stargazers %></span></a>
+        <a href=""><span class="octicon octicon-git-branch"></span><span><%= forks %></span></a>
         <span class="repoDescr"><%= description %></span>
         <span class="repoUpdate"><%= update %></span>
       </li>
     </script>
 
     <script id="user_template" type="text/template">
-      <img src="<%= userImage %>">
-      <h2
+      <img src="<%= image  %>">
+      <h2><%= name %></h2>
+      <h3><%= username %></h3>
+      <ul class="userInfo">
+        <li><span class="#"></span><span><%= location %></span></li>
+        <li><span class="#"></span><span><%= email %></span></li>
+        <li><span class="#"></span><span><%= joinDate %></span></li>
+      </ul>
+      <ul class="following">
+        <li><span><%= followers %></span><span>Followers</span></li>
+        <li><span><%= starred %></span><span>Starred</span></li>
+        <li><span><%= following %></span><span>Following</span></li>
+      </ul>
+      <ul class="organizations">
+      </ul>
     </script>
+
+    <script id="userNav_template" type="text/template">
+      <li><a href="#"><img src="<%= image  %>"><%= username %></a></li>
+      <li><a href="#"><span class="octicon octicon-plus"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-inbox"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-gear"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-sign-out"></span></a></li>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

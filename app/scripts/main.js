@@ -1,8 +1,8 @@
-
+$(document).ready(function () {
 
 
 //Script from Refills to control the Tab-Accordion Container ========================
-$(document).ready(function () {
+
   $('.accordion-tabs-minimal').each(function(index) {
     $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
   });
@@ -20,6 +20,8 @@ $(document).ready(function () {
       event.preventDefault();
     }
   });
-});
+
 
 //End of Tab-Accordion Container Refill Script========================================
+
+});
