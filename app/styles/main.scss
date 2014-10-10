@@ -10,6 +10,75 @@ body {
   color: #333;
 }
 
+header {
+  height:50px;
+  font-size:12px;
+}
+
+
+.outer-container-1 {
+  @include outer-container;
+  overflow:auto;
+
+  ul {
+    @include span-columns(8);
+    float:left;
+
+    & > * {
+      float:left;
+    }
+  }
+
+  ul#userNav {
+    @include span-columns(4);
+    float:right;
+
+    & > * {
+      float:left;
+    }
+  }
+}
+
+#userNav img{
+  height:20px;
+  width:20px;
+}
+
+.outer-container-2 {
+  @include outer-container;
+  overflow:auto;
+
+  .sidebar {
+    @include span-columns(3);
+  }
+
+  .sidebar > * {
+    float:left;
+  }
+
+  .directory {
+    @include span-columns(9);
+  }
+
+  .directory > * {
+    float:left;
+  }
+}
+
+footer {
+  height: 100px;
+
+  ul:first-child {
+    float: left;
+  }
+  ul:last-child {
+    float:right;
+  }
+
+  li {
+    float:left;
+  }
+}
 //===================================================================
 //Tab - Accordion Styling
 //===================================================================

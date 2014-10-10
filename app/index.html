@@ -24,60 +24,65 @@
   </head>
   <body>
     <header>
-      <ul>
-        <li><a href="#"></a><span class="octicon octicon-mark-github"></span></li>
-        <li><input type="search" name="Search Github" value="Search Github"></li>
-        <li><a href="#">Explore</a></li>
-        <li><a href="#">Gist</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-      <ul id="userNav">
-        <!-- Template goes here -->
-      </ul>
+      <div class="outer-container-1">
+        <ul>
+          <li><a href="#"></a><span class="octicon octicon-mark-github"></span></li>
+          <li><input type="search" name="Search Github" value="Search Github"></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Gist</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <ul id="userNav">
+          <!-- Template goes here -->
+        </ul>
+      </div>
     </header>
-    <section class="sidebar">
-      <!-- Template items go inside here! -->
-      <ul class="organizations">
-      </ul>
-    </section>
+    <div class="outer-container-2">
+      <section class="sidebar">
+        <div id="sidebarUserInfo">
+        <!-- Template items go inside here! -->
+        </div>
+        <ul class="organizations">
+        </ul>
+      </section>
 
-      <div class="directory">
-        <div class="profileBtn"><span class="octicon octicon-pencil"></span>Edit Profile</div>
-        <ul class="accordion-tabs-minimal">
-          <li class="tab-header-and-content">
-            <a href="#" class="tab-link is-active"><span class="octicon octicon-diff-added"></span>Contributions</a>
-            <div class="tab-content">
-              <p>no content</p>
-            </div>
-          </li>
-          <li class="tab-header-and-content">
-            <a href="#" class="tab-link"><span class="octicon octicon-repo-pull"></span>Repositories</a>
-            <div class="tab-content">
-              <input type="Search" name="Repo_Search" value="Find a repository...">
-              <input type="button" name="Search_Button" value="Search">
-              <a href="#">All</a>
-              <a href="#">Public</a>
-              <a href="#">Private</a>
-              <a href="#">Sources</a>
-              <a href="#">Forks</a>
-              <a href="#">Mirrors</a>
-              <div class="button"><span class="octicon octicon-repo-pull"></span>New</div>
-              <ul class="repoList">
-                <!--Template items go inside here! -->
-              </ul>
-
-            </div>
-          </li>
-          <li class="tab-header-and-content">
-            <a href="#" class="tab-link"><span class="octicon octicon-rss"></span>Public Activity</a>
-            <div class="tab-content">
+        <div class="directory">
+          <div class="profileBtn"><span class="octicon octicon-pencil"></span>Edit Profile</div>
+          <ul class="accordion-tabs-minimal">
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link is-active"><span class="octicon octicon-diff-added"></span>Contributions</a>
+              <div class="tab-content">
                 <p>no content</p>
-            </div>
-          </li>
-      </ul>
-    </div><!--directory end -->
+              </div>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link"><span class="octicon octicon-repo-pull"></span>Repositories</a>
+              <div class="tab-content">
+                <input type="Search" name="Repo_Search" value="Find a repository...">
+                <input type="button" name="Search_Button" value="Search">
+                <a href="#">All</a>
+                <a href="#">Public</a>
+                <a href="#">Private</a>
+                <a href="#">Sources</a>
+                <a href="#">Forks</a>
+                <a href="#">Mirrors</a>
+                <div class="button"><span class="octicon octicon-repo-pull"></span>New</div>
+                <ul class="repoList">
+                  <!--Template items go inside here! -->
+                </ul>
 
+              </div>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link"><span class="octicon octicon-rss"></span>Public Activity</a>
+              <div class="tab-content">
+                  <p>no content</p>
+              </div>
+            </li>
+        </ul>
+      </div><!--directory end -->
+</div><!--outer-container end -->
 
 
     <footer>
@@ -103,7 +108,8 @@
       </nav>
     </footer>
 
-    <!--- Templates ---->
+<!-- =====================Templates========================================== -->
+
     <script id="repo_template" type="text/template">
       <li><a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
         <a href="<%= stargazers_url %>"><span class="octicon octicon-star"></span><span><%= stargazers_count %></span></a>

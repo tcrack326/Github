@@ -23,7 +23,7 @@ var orgRendered = _.template(org_Template);
 $.getJSON(userUrl).done(function (user_data) {
 
   $('#userNav').append(userNavRendered(user_data));
-  $('.sidebar').append(userRendered(user_data));
+  $('#sidebarUserInfo').append(userRendered(user_data));
 
 
 }).fail(function (){
