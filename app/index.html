@@ -38,6 +38,8 @@
     </header>
     <section class="sidebar">
       <!-- Template items go inside here! -->
+      <ul class="organizations">
+      </ul>
     </section>
 
       <div class="directory">
@@ -61,7 +63,7 @@
               <a href="#">Forks</a>
               <a href="#">Mirrors</a>
               <div class="button"><span class="octicon octicon-repo-pull"></span>New</div>
-              <ul>
+              <ul class="repoList">
                 <!--Template items go inside here! -->
               </ul>
 
@@ -103,39 +105,45 @@
 
     <!--- Templates ---->
     <script id="repo_template" type="text/template">
-      <li><a href="<%= repoLink %>"<h3 class="repoTitle"><%= title %></h3></a>
-        <a href=""><span class="octicon octicon-star"></span><span><%= stargazers %></span></a>
+      <li><a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
+        <a href="<%= stargazers_url %>"><span class="octicon octicon-star"></span><span><%= stargazers_count %></span></a>
         <a href=""><span class="octicon octicon-git-branch"></span><span><%= forks %></span></a>
         <span class="repoDescr"><%= description %></span>
-        <span class="repoUpdate"><%= update %></span>
+        <span class="repoUpdate"><%= updated_at %></span>
       </li>
     </script>
 
     <script id="user_template" type="text/template">
-      <img src="<%= image  %>">
+      <img src="<%= avatar_url  %>">
       <h2><%= name %></h2>
-      <h3><%= username %></h3>
+      <h3><%= login %></h3>
       <ul class="userInfo">
-        <li><span class="#"></span><span><%= location %></span></li>
-        <li><span class="#"></span><span><%= email %></span></li>
-        <li><span class="#"></span><span><%= joinDate %></span></li>
+        <li><span class="octicon octicon-location"></span><span><%= location %></span></li>
+        <li><span class="octicon octicon-mail"></span><span><%= email %></span></li>
+        <li><span class="octicon octicon-link"></span><span><%= blog %></span></li>
+        <li><span class="octicon octicon-clock"></span><span><%= created_at %></span></li>
       </ul>
       <ul class="following">
-        <li><span><%= followers %></span><span>Followers</span></li>
-        <li><span><%= starred %></span><span>Starred</span></li>
-        <li><span><%= following %></span><span>Following</span></li>
+        <li><a href="<%= followers_url %>"><span><%= followers %></span><span>Followers</span></a></li>
+        <li><a href="<%= starred_url %>"><span><%= public_gists %></span><span>Starred</span></a></li>
+        <li><a href="<%= following_url %>"><span><%= following %></span><span>Following</span></a></li>
       </ul>
-      <ul class="organizations">
-      </ul>
+
+    </script>
+
+    <script id="organization" type="text/template">
+      <li>
+        <a href="<%= url %>"><img src="<%= avatar_url %>"></a>
+      </li>
     </script>
 
     <script id="userNav_template" type="text/template">
-      <li><a href="#"><img src="<%= image  %>"><%= username %></a></li>
+      <li><a href="#"><img src="<%= avatar_url  %>"><%= login %></a></li>
       <li><a href="#"><span class="octicon octicon-plus"></span></a></li>
       <li><a href="#"><span class="octicon octicon-inbox"></span></a></li>
       <li><a href="#"><span class="octicon octicon-gear"></span></a></li>
       <li><a href="#"><span class="octicon octicon-sign-out"></span></a></li>
-
+    </script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
