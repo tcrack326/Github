@@ -8,6 +8,10 @@
 //variables for styling
 $font:Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 
+/*=======================================================================
+Overall styling/positiong for main parts of the page: Header, Sidebar, Repo Page, and footer
+==========================================================================*/
+
 body {
   background: #fffff;
   font-family: $font;
@@ -42,15 +46,22 @@ header {
   }
 
 
-#userNav img{
-  height:20px;
-  width:20px;
+#userNav img {
+  height: 20px;
+  width: 20px;
 }
 
 .outer-container-2 {
   @include outer-container;
   overflow: auto;
   margin-top: 20px;
+
+  //sidebar and directory are within outer-container-2
+
+/*=====================================================================
+End overall styling and Begin Sidebar styling
+=====================================================================*/
+
   .sidebar {
     @include span-columns(3.75);
     max-width: 228px;
@@ -78,28 +89,66 @@ header {
 
   #sidebarUserInfo h2 {
     font-size: 25px;
+    font-weight: 900;
   }
 
   #sidebarUserInfo h3 {
     font-size: 20px;
-    font-weight: normal;
+    font-weight: 200;
     padding-bottom: 20px;
     border-bottom:1px solid gray;
   }
 
   .userInfo {
-    font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-top: 20px;
+    font-size: 12px;
 
-    & span {
+    li:first-child span.octicon {
+      margin-right: 12px;
+    }
+
+    li {
+      margin-bottom: 3px;
       white-space: nowrap;
-      overflow: hidden;
+      overflow:hidden;
       text-overflow: ellipsis;
+    }
+
+    li span.octicon {
+      color: lightgray;
+      margin-right: 8px;
+    }
+
+    li a {
+      font-weight: bold;
     }
   }
 
+  .following {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid lightgray;
+    overflow: auto;
+
+    li {
+      float:left;
+      margin:14px;
+    }
+    span:first-child {
+      display:block;
+      text-align: center;
+      clear: both;
+      font-size: 25px;
+    }
+
+    span:last-child {
+      float: left;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+/*=====================================================================
+End of sidebar styling. Begin directory styling
+========================================================================*/
   .directory {
     @include span-columns(8.25);
     @include omega();
@@ -110,6 +159,9 @@ header {
   }
 }
 
+/*========================================================================
+End Directory. Begin Footer styling
+=========================================================================*/
 footer {
   height: 100px;
   border-top: 1px solid gray;
@@ -149,7 +201,7 @@ Repo List Styling
         border-radius: 3px;
         font-size:12px;
         font-weight: bold;
-        margin-left: 0px;
+        margin-left: 4px;
 
         a {
           color: white;
