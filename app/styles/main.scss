@@ -7,6 +7,7 @@
 
 //variables for styling
 $font:Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+
 body {
   background: #fffff;
   font-family: $font;
@@ -18,7 +19,6 @@ header {
   font-size: 12px;
   background-color: #F5F5F5;
 }
-
 
 .outer-container-1 {
   @include outer-container;
@@ -50,24 +50,58 @@ header {
 .outer-container-2 {
   @include outer-container;
   overflow: auto;
-  margin-top: 35px;
+  margin-top: 20px;
   .sidebar {
-    @include span-columns(3);
-    padding: 0 10px 0 10px;
-
+    @include span-columns(3.75);
+    max-width: 228px;
   }
 
   .sidebar > * {
     float: left;
   }
 
-  .sidebar img {
-    width: 50px;
-    height: 50px;
+  .sidebar img:first-child {
+    float: left;
+    height: 228px;
+    border-radius: 10px;
+  }
+
+  .sidebar img:last-child {
+    float: left;
+    width: 45px;
+    height: 45px;
+  }
+
+  #sidebarUserInfo {
+    width: 100%;
+  }
+
+  #sidebarUserInfo h2 {
+    font-size: 25px;
+  }
+
+  #sidebarUserInfo h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 20px;
+    border-bottom:1px solid gray;
+  }
+
+  .userInfo {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .directory {
-    @include span-columns(9);
+    @include span-columns(8.25);
     @include omega();
   }
 
@@ -78,7 +112,7 @@ header {
 
 footer {
   height: 100px;
-
+  border-top: 1px solid gray;
   ul:first-child {
     float: left;
   }
@@ -91,39 +125,101 @@ footer {
   }
 }
 
-.tab-content {
-  input:first-child {
-    float:left;
-    width: 260px;
-  }
-}
 
 /*=================================================================
 Repo List Styling
 ==================================================================*/
+.repoLinks {
+  float: left;
+  width: 100%;
+  height: 34px;
+  margin-bottom: 8px;
 
+  ul {
+    float: left;
+
+    li {
+      float: left;
+      height: 100%;
+
+      div {
+        background-color:#85D868;
+        border:1px solid #5CA941;
+        padding: 8px 6px 8px 6px;
+        border-radius: 3px;
+        font-size:12px;
+        font-weight: bold;
+        margin-left: 0px;
+
+        a {
+          color: white;
+          font-weight: bold;
+          span {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+
+    li > * {
+      display:inline-block;
+    }
+
+    input:first-child {
+      color:lightgray;
+    }
+
+    .searchBtn {
+      font-weight: bold;
+      padding: 10px;
+      margin-right: 26px;
+      margin-left: 6px;
+      height: 33px;
+      background-color: #F0F0F0;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    a {
+      margin: 12px 5px 12px 5px;
+      font-weight: bold;
+    }
+  }
+
+  li:first-child input {
+    width: 260px;
+    padding-right: 7px;
+  }
+}
 .repoList li {
+  float: left;
+  width: 100%;
   height: 140px;
   border-top: 1px solid lightgray;
-  padding: 35px 0 35px 0;
+  padding: 33px 0 33px 0;
 }
 
 .repoHeader {
-  float:left;
-  width:100%;
+  float: left;
+  width: 100%;
 }
 
 .repoTitle {
-  float:left;
+  float: left;
   font-size: 20px;
-  font-style: bold;
+  font-weight: bold;
+
 }
 
 .repoHistory {
   float: right;
   font-size: 10px;
-  font-style: bold;
+  font-weight: bold;
   color: gray;
+
+  span {
+    color:gray;
+  }
 }
 
 .repoText {
@@ -132,7 +228,7 @@ Repo List Styling
 
   .repoDescr {
     display: block;
-
+    padding: 12px 0 12px 0;
   }
 }
 
@@ -161,10 +257,14 @@ footer {
   li.tab-header-and-content {
     @include media($tab-mode) {
       display: inline;
+      font-size: 14px;
+      line-height: .9;
     }
   }
 
   a.tab-link {
+    font-family:$font;
+    font-style: bold;
     background-color: $tab-inactive-color;
     border-top: $tab-border;
     color: $dark-gray;
@@ -199,6 +299,8 @@ footer {
   .tab-content {
     display: none;
     padding: $base-spacing $gutter;
+    padding-right: 0;
+    padding-left: 0;
 
     @include media($tab-mode) {
       border-top: $tab-border;
