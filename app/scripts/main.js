@@ -46,7 +46,12 @@ $.getJSON(repoUrl).done(function (repo_data) {
     var timeInDays = Math.round( (timeInMS) / (1000*60*60*24));
 
     if (timeInHours < 24) {
+      if (timeInHours === 1){
+        repo.pushed_at = "Updated an hour ago";
+      }
+      else {
       repo.pushed_at = "Updated " + timeInHours + " hours ago";
+      }
     }
 
     else if ( timeInHours > 24 && timeInDays < 30  ) {
