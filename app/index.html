@@ -115,6 +115,7 @@
 <!-- =====================Templates========================================== -->
 
     <script id="repo_template" type="text/template">
+
       <li>
       <div class="repoHeader">
         <a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
@@ -125,8 +126,7 @@
           </div>
         </div>
         <div class="repoText">
-          <span class="repoDescr"><%= description %></span>
-          <span class="repoUpdate"><%= updated_at %></span>
+          <span class="repoDescr"><%= description %></span><span id="repoUpdate" class="repoUpdate"><%= pushed_at %></span>
         </div>
       </li>
     </script>
@@ -139,7 +139,8 @@
         <li><span class="octicon octicon-location"></span><span><%= location %></span></li>
         <li><span class="octicon octicon-mail"></span><a href="<%= email %>"><span><%= email %></span></a></li>
         <li><span class="octicon octicon-link"></span><a href="<%= blog %>"><span><%= blog %></span></a></li>
-        <li><span class="octicon octicon-clock"></span><span><%= created_at %></span></li>
+        <li><span class="octicon octicon-clock"></span><span>Joined on </span><span
+         id="joinDate"><%= created_at %></span></li>
       </ul>
       <ul class="following">
         <li><a href="<%= followers_url %>"><span><%= followers %></span><span>Followers</span></a></li>
