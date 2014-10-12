@@ -25,18 +25,22 @@
   <body>
     <header>
       <div class="outer-container-1">
-        <ul class="gitNav">
-          <li><a href="#"><span class="mega-octicon octicon-mark-github"></span></a></li>
-          <li><input type="search" name="Search Github" value="Search Github"></li>
-          <li><a class= "link" href="#">Explore</a></li>
-          <li><a class= "link" href="#">Gist</a></li>
-          <li><a class= "link" href="#">Blog</a></li>
-          <li><a class= "link" href="#">Help</a></li>
-        </ul>
-        <ul id="userNav">
-          <!-- Template goes here -->
+        <div class="gitNav">
+          <ul>
+            <li><a href="#"><span class="mega-octicon octicon-mark-github"></span></a></li>
+            <li><input type="search" name="Search Github" value="Search Github"></li>
+            <li><a class= "link" href="#">Explore</a></li>
+            <li><a class= "link" href="#">Gist</a></li>
+            <li><a class= "link" href="#">Blog</a></li>
+            <li><a class= "link" href="#">Help</a></li>
         </ul>
       </div>
+        <div class="userNavigation">
+          <ul id="userNav">
+          <!-- Template goes here -->
+          </ul>
+        </div>
+      </div> <!-- outer-container-1 -->
     </header>
     <div class="outer-container-2">
       <section class="sidebar">
@@ -44,6 +48,7 @@
         <!-- Template items go inside here! -->
         </div>
         <ul class="organizations">
+          <li><h4>Organizations</h4></li>
         </ul>
       </section>
 
@@ -90,17 +95,17 @@
 
 
     <footer>
-      <nav class="legalStuff">
-        <ul>
-          <li>CopyrightSymbol Github, Inc.</li>
+      <div class="legalStuff">
+        <ul class>
+          <li>&copyGithub, Inc.</li>
           <li><a href="#">Terms</a></li>
           <li><a href="#">Privacy</a></li>
           <li><a href="#">Security</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-      </nav>
-      <span class="octicon octicon-mark-github">
-      <nav class= "aboutGithub">
+      </div>
+      <div class="octocat"><span class="mega-octicon octicon-mark-github"></span></div>
+      <div class="aboutGithub">
         <ul>
           <li><a href="#">Status</a></li>
           <li><a href="#">API</a></li>
@@ -108,8 +113,8 @@
           <li><a href="#">Shop</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+      </ul>
+    </div>
     </footer>
 
 <!-- =====================Templates========================================== -->
@@ -157,7 +162,7 @@
     </script>
 
     <script id="userNav_template" type="text/template">
-      <li><a href="#"><img src="<%= avatar_url  %>"><%= login %></a></li>
+      <li><a href="#"><img src="<%= avatar_url  %>"><span><%= login %></span></a></li>
       <li><a href="#"><span class="octicon octicon-plus"></span></a></li>
       <li><a href="#"><span class="octicon octicon-inbox"></span></a></li>
       <li><a href="#"><span class="octicon octicon-gear"></span></a></li>
