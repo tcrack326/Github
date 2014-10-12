@@ -8,6 +8,10 @@
 //variables for styling
 $font:Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 
+$lightBorder: #EEEEEE;
+$lightBlue: #477DCA;
+$darkBlue: #2C5999;
+
 /*=======================================================================
 Overall styling/positiong for main parts of the page: Header, Sidebar, Repo Page, and footer
 ==========================================================================*/
@@ -28,6 +32,7 @@ header {
   height: 50px;
   font-size: 12px;
   background-color: #F5F5F5;
+  border: 1px solid #E5E5E5;
 }
 
 .outer-container-1 {
@@ -93,9 +98,10 @@ Begin Header styling
   overflow: auto;
   ul {
   float: right;
+
     li {
     float:left;
-    padding: 9px;
+    padding: 5px 9px 5px 9px;
 
       & > * {
         color: #333333;
@@ -207,9 +213,13 @@ Begin Sidebar styling
   }
 
   .following {
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    border-top: 1px solid $lightBorder;
+    border-bottom: 1px solid $lightBorder;
     overflow: auto;
+
+    a:hover {
+      text-decoration: none;
+    }
 
     li {
       float:left;
@@ -229,6 +239,10 @@ Begin Sidebar styling
       color: gray;
       text-align: center;
       font-size: 12px;
+
+      &:hover {
+        color: $darkBlue;
+      }
     }
   }
 
@@ -260,11 +274,10 @@ End Directory. Begin Footer styling
 
 footer {
   @include outer-container;
-  overflow: auto;
   height: 100px;
   color: #7B7B7B;
   padding: 0;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid $lightBorder;
 
   .octocat {
     @include span-columns(4);
@@ -272,7 +285,15 @@ footer {
     text-align: center;
     float: left;
     margin-left: 25px;
-    padding: 45px;
+    padding: 35px;
+
+    & a span {
+      color: lightgray;
+    }
+
+      & a span:hover {
+        color: #AAAAAA;
+      }
   }
 
   .legalStuff {
@@ -310,7 +331,7 @@ footer {
 }
 
 /*=================================================================
-Repo List Styling
+End Footer Styling. Begin Repo List Styling
 ==================================================================*/
 
 .repoLinks {
@@ -338,11 +359,13 @@ Repo List Styling
 
         &:hover {
           background-image: linear-gradient( 0deg, #4B9830, #74C757 );
+
         }
 
         a {
           color: white;
           font-weight: bold;
+          text-decoration: none;
         }
       }
     }
@@ -387,7 +410,7 @@ Repo List Styling
   float: left;
   width: 100%;
   height: 140px;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid $lightBorder;
   padding: 33px 0 33px 0;
 }
 
