@@ -20,6 +20,7 @@ body {
   background: #fffff;
   font-family: $font;
   color: #333;
+  min-width: 1080px;
 }
 
 a:hover {
@@ -33,11 +34,12 @@ header {
   font-size: 12px;
   background-color: #F5F5F5;
   border: 1px solid #E5E5E5;
+  min-width: 1080px;
 }
 
 .outer-container-1 {
   padding: 10px 175px 10px 185px;
-
+  min-width: 967px;
   a:hover {
     text-decoration: none;
     color: #477DCA;
@@ -139,6 +141,7 @@ End Header styling
 .outer-container-2 {
   @include outer-container;
   overflow: auto;
+  min-width: 967px;
   margin-top: 20px;
 
 
@@ -348,6 +351,8 @@ End Footer Styling. Begin Repo List Styling
       height: 100%;
 
       div {
+        float: right;
+        display: inline-block;
         background-image: linear-gradient( 0deg, #5CA941, #85D868 );
         background-color:#85D868;
         border:1px solid #5CA941;
