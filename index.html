@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Github</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="outer-container-1">
+        <div class="gitNav">
+          <ul>
+            <li><a href="https://github.com/orgs/tiy-atlanta-js/dashboard"><span class="mega-octicon octicon-mark-github"></span></a></li>
+            <li><input type="search" name="Search Github" value="Search Github"></li>
+            <li><a class= "link" href="https://github.com/explore">Explore</a></li>
+            <li><a class= "link" href="https://gist.github.com/">Gist</a></li>
+            <li><a class= "link" href="https://github.com/blog">Blog</a></li>
+            <li><a class= "link" href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+        <div class="userNavigation">
+          <ul id="userNav">
+          <!-- Template goes here -->
+          </ul>
+        </div>
+      </div> <!-- outer-container-1 -->
+    </header>
+    <div class="outer-container-2">
+      <section class="sidebar">
+        <div id="sidebarUserInfo">
+        <!-- Template items go inside here! -->
+        </div>
+        <ul class="organizations">
+          <li><h4>Organizations</h4></li>
+        </ul>
+      </section>
+
+        <div class="directory">
+          <a href="#"><div class="profileBtn"><span class="octicon octicon-pencil"></span>Edit Profile</div></a>
+          <ul class="accordion-tabs-minimal">
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link is-active"><span class="octicon octicon-diff-added"></span>Contributions</a>
+              <div class="tab-content">
+                <p>no content</p>
+              </div>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link"><span class="octicon octicon-repo-pull"></span>Repositories</a>
+              <div class="tab-content">
+                <section class="repoLinks">
+                  <ul>
+                    <li><input type="Search" name="Repo_Search" value="Find a repository..."></li>
+                    <li class="searchBtn"><span>Search</span></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">All</a></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">Public</a></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">Private</a></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">Sources</a></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">Forks</a></li>
+                    <li><a href="https://github.com/tcrack326?tab=repositories#">Mirrors</a></li>
+                    <li><div class="button"><a href="https://github.com/repositories/new"><span class="octicon octicon-repo-pull"></span>New</a></div></li>
+                  </ul>
+                </section>
+                <ul class="repoList">
+                  <!--Template items go inside here! -->
+                </ul>
+
+              </div>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link"><span class="octicon octicon-rss"></span>Public Activity</a>
+              <div class="tab-content">
+                  <p>no content</p>
+              </div>
+            </li>
+        </ul><!-- tabs end    -->
+      </div><!--directory end -->
+</div><!--outer-container end -->
+
+
+    <footer>
+      <div class="legalStuff">
+        <ul class>
+          <li>&copyGithub, Inc.</li>
+          <li><a href="https://github.com/site/terms">Terms</a></li>
+          <li><a href="https://github.com/site/privacy">Privacy</a></li>
+          <li><a href="https://github.com/security">Security</a></li>
+          <li><a href="https://github.com/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="octocat"><a href="#"><span class="mega-octicon octicon-mark-github"></span></a></div>
+      <div class="aboutGithub">
+        <ul>
+          <li><a href="https://status.github.com/">Status</a></li>
+          <li><a href="http://developer.github.com/">API</a></li>
+          <li><a href="http://training.github.com/">Training</a></li>
+          <li><a href="http://shop.github.com/">Shop</a></li>
+          <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://github.com/about">About</a></li>
+      </ul>
+    </div>
+    </footer>
+
+<!-- =====================Templates========================================== -->
+
+    <script id="repo_template" type="text/template">
+
+      <li>
+      <div class="repoHeader">
+        <a href="<%= html_url %>"<h3 class="repoTitle"><%= name %></h3></a>
+          <div class="repoHistory">
+            <span><%= language %></span>
+            <a href="<%= stargazers_url %>"><span class="octicon octicon-star"></span><span><%= stargazers_count %></span></a>
+            <a href=""><span class="octicon octicon-git-branch"></span><span><%= forks %></span></a>
+          </div>
+        </div>
+        <div class="repoText">
+          <span class="repoDescr"><%= description %></span><span id="repoUpdate" class="repoUpdate"><%= pushed_at %></span>
+        </div>
+      </li>
+    </script>
+
+    <script id="user_template" type="text/template">
+      <img src="<%= avatar_url  %>">
+      <h2><%= name %></h2>
+      <h3><%= login %></h3>
+      <ul class="userInfo">
+        <li><span class="octicon octicon-location"></span><span><%= location %></span></li>
+        <li><span class="octicon octicon-mail"></span><a href="<%= email %>"><span><%= email %></span></a></li>
+        <li><span class="octicon octicon-link"></span><a href="<%= blog %>"><span><%= blog %></span></a></li>
+        <li><span class="octicon octicon-clock"></span><span>Joined on </span><span
+         id="joinDate"><%= created_at %></span></li>
+      </ul>
+      <ul class="following">
+        <li><a href="<%= followers_url %>"><span><%= followers %></span><span>Followers</span></a></li>
+        <li><a href="<%= starred_url %>"><span><%= public_gists %></span><span>Starred</span></a></li>
+        <li><a href="<%= following_url %>"><span><%= following %></span><span>Following</span></a></li>
+      </ul>
+
+    </script>
+
+    <script id="organization" type="text/template">
+      <li>
+        <a href="<%= url %>"><img src="<%= avatar_url %>"></a>
+      </li>
+    </script>
+
+    <script id="userNav_template" type="text/template">
+      <li><a href="#"><img src="<%= avatar_url  %>"><span><%= login %></span></a></li>
+      <li><a href="#"><span class="octicon octicon-plus"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-inbox"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-gear"></span></a></li>
+      <li><a href="#"><span class="octicon octicon-sign-out"></span></a></li>
+    </script>
+    <script src="scripts/vendor.js"></script>
+        <script src="scripts/token.js"></script>
+        <script src="scripts/main.js"></script>
+</body>
+</html>
