@@ -50,7 +50,7 @@ $.getJSON(repoUrl).done(function (repo_data) {
       if( timeInMinutes === 0){
         repo.pushed_at = "Updated a minute ago";
       }
-      repo.pushed_at = "Updated " + timeInMinutes + " ago";
+      repo.pushed_at = "Updated " + timeInMinutes + " minutes ago";
     }
     else if (timeInHours < 24) {
       if (timeInHours === 1){
