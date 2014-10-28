@@ -162,7 +162,7 @@
     </script>
 
     <script id="userNav_template" type="text/template">
-      <li><a href="#"><img src="<%= avatar_url  %>"><span><%= login %></span></a></li>
+      <li><a href="#"><img src="{{ avatar_url  }}"><span><{{ login }}</span></a></li>
       <li><a href="#"><span class="octicon octicon-plus"></span></a></li>
       <li><a href="#"><span class="octicon octicon-inbox"></span></a></li>
       <li><a href="#"><span class="octicon octicon-gear"></span></a></li>
@@ -172,6 +172,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/handlebars/handlebars.min.js"</script>
     <!-- endbower -->
     <!-- endbuild -->
         <script src="scripts/token.js"></script>

@@ -7,7 +7,7 @@ var repoUrl="https://api.github.com/users/tcrack326/repos";
 var orgsUrl="https://api.github.com/users/tcrack326/orgs";
 
 var userNavTemplate = $('#userNav_template').html();
-var userNavRendered = _.template(userNavTemplate);
+var userNavRendered = Handlebars.compile(userNavTemplate);
 
 var user_Template = $('#user_template').html();
 var userRendered = _.template(user_Template);
