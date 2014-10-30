@@ -1,0 +1,15 @@
+  <img src="{{ avatar_url  }}">
+  <h2>{{ name }}</h2>
+  <h3>{{ login }}</h3>
+  <ul class="userInfo">
+    <li><span class="octicon octicon-location"></span><span>{{ location }}</span></li>
+    <li><span class="octicon octicon-mail"></span><a href="{{ email }}"><span>{{ email }}</span></a></li>
+    <li><span class="octicon octicon-link"></span><a href="{{ blog }}"><span>{{ blog }}</span></a></li>
+    <li><span class="octicon octicon-clock"></span><span>Joined on </span><span
+     id="joinDate">{{ created_at }}</span></li>
+  </ul>
+  <ul class="following">
+    <li><a href="{{ followers_url }}"><span>{{ followers }}</span><span>Followers</span></a></li>
+    <li><a href="{{ starred_url }}"><span>{{ public_gists }}</span><span>Starred</span></a></li>
+    <li><a href="{{ following_url }}"><span>{{ following }}</span><span>Following</span></a></li>
+  </ul>

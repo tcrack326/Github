@@ -1,0 +1,45 @@
+Day 45 - Code Challenege and Pulling data from Servers
+
+For Pulling data from Servers see project Todo list.
+
+Code Challenge!!
+(function() {
+  var a = b = 5;
+})();
+
+1.
+a will be: null - undefined reference error
+b will be: 5 - b is set not set to a var so it is defined to its parent, window. window.b = 5
+
+2.
+'hello'.repeatify(3);
+hellohellohello
+
+String.prototype.repeatify = function(integer){
+  var newString = "";
+  for(i=0;i < integer; i++){
+  newString += this;
+}
+
+console.log("newString");
+return newString;
+};
+
+3.
+
+var fizzbuzz = function() {
+  for(i=1; i <= 100; i++){
+  if ( i % 15 === 0 ){
+    console.log("fizzbuzz");
+  }
+  else if(i % 5 === 0){
+    console.log("buzz");
+  }
+  else if(i % 3 === 0){
+    console.log("fizz");
+}
+  else {
+    console.log(i);
+  }
+}
+};

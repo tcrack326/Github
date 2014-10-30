@@ -10,7 +10,7 @@ var userNavTemplate = $('#userNav_template').html();
 var userNavRendered = Handlebars.compile(userNavTemplate);
 
 var user_Template = $('#user_template').html();
-var userRendered = _.template(user_Template);
+var userRendered = Handlebars.template['user_template'];
 
 var repo_Template = $('#repo_template').html();
 var repoRendered = _.template(repo_Template);
